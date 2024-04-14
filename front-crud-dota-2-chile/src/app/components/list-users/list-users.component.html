@@ -1,7 +1,7 @@
 <div class="container">
     <div class="title">
         <h4>Listado de usuarios</h4>
-        <button type="button" class="btn btn-dark">Agregar Usuario</button>
+        <button type="button" class="btn btn-dark" routerLink="/add">Agregar Usuario</button>
     </div>
 
 
@@ -28,7 +28,7 @@
             <td>{{ user.horasJugadas }}</td>
             <td>{{ user.rangoActual }}</td>
             <td>
-                <button type="button" class="btn btn-primary btn-sm">Editar</button>
+                <button routerLink="/edit/{{ user.id }}" type="button" class="btn btn-primary btn-sm">Editar</button>
                 <button type="button" class="btn btn-primary btn-sm ms-2">Eliminar</button>
             </td>
           </tr>
