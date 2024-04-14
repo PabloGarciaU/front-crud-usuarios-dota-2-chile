@@ -1,1 +1,37 @@
-<p>list-users works!</p>
+<div class="container">
+    <div class="title">
+        <h4>Listado de usuarios</h4>
+        <button type="button" class="btn btn-dark">Agregar Usuario</button>
+    </div>
+
+
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">ID Usuario</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apodo</th>
+            <th scope="col">Rut</th>
+            <th scope="col">Fecha de nacimiento</th>
+            <th scope="col">Horas Jugadas</th>
+            <th scope="col">Rango actual</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of listUsers" class="table-dark">
+            <td>{{ user.id }}</td>
+            <td>{{ user.nombre }}</td>
+            <td>{{ user.apodo }}</td>
+            <td>{{ user.rut }}</td>
+            <td>{{ user.fechaNacimiento | date }}</td>
+            <td>{{ user.horasJugadas }}</td>
+            <td>{{ user.rangoActual }}</td>
+            <td>
+                <button type="button" class="btn btn-primary btn-sm">Editar</button>
+                <button type="button" class="btn btn-primary btn-sm ms-2">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
