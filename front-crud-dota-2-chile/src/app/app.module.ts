@@ -3,6 +3,12 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+
+// Moduls
+import {ReactiveFormsModule } from '@angular/forms';
+
+//  Components
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ListUsersComponent } from './components/list-users/list-users.component';
 import { AddEditUserComponent } from './components/add-edit-user/add-edit-user.component';
@@ -16,7 +22,8 @@ import { AddEditUserComponent } from './components/add-edit-user/add-edit-user.c
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [
     provideClientHydration()

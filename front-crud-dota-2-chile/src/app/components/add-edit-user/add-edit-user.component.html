@@ -3,22 +3,43 @@
         <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
             <div class="card-header text-center">Agregar Usuario</div>
             <div class="card-body">
-                <form>                   
-                    <input type="text" class="form-control" placeholder="Ingrese ID Usuario">
-                    <input type="text" class="form-control mt-2" placeholder="Ingrese Nombre">
-                    <input type="text" class="form-control mt-2" placeholder="Ingrese Apodo">
-                    <input type="text" class="form-control mt-2" placeholder="Ingrese Rut">
-                    <input type="text" class="form-control mt-2" placeholder="Ingrese Fecha de nacimiento">
-                    <input type="text" class="form-control mt-2" placeholder="Ingrese Horas jugadas">
-                    <input type="text" class="form-control mt-2" placeholder="Ingrese Rango actual">
+                <form [formGroup]="form" (ngSubmit)="addUser()">                   
+                    <input formControlName="id" type="text" class="form-control" placeholder="Ingrese ID Usuario">
+                    <span *ngIf="form.get('id')?.hasError('required')">
+                        El campo ID usuario es <strong> requerido </strong>
+                    </span>
+                    <input formControlName="nombre" type="text" class="form-control mt-2" placeholder="Ingrese Nombre">
+                    <span *ngIf="form.get('nombre')?.hasError('required')">
+                        El campo Nombre es <strong> requerido </strong>
+                    </span>
+                    <input formControlName="apodo" type="text" class="form-control mt-2" placeholder="Ingrese Apodo">
+                    <span *ngIf="form.get('apodo')?.hasError('required')">
+                        El campo Apodo es <strong> requerido </strong>
+                    </span>
+                    <input formControlName="rut" type="text" class="form-control mt-2" placeholder="Ingrese Rut">
+                    <span *ngIf="form.get('rut')?.hasError('required')">
+                        El campo Rut es <strong> requerido </strong>
+                    </span>
+                    <input formControlName="fechaNacimiento" type="date" class="form-control mt-2" placeholder="Ingrese Fecha de nacimiento">
+                    <span *ngIf="form.get('fechaNacimiento')?.hasError('required')">
+                        El campo Fecha de nacimiento es <strong> requerido </strong>
+                    </span>
+                    <input formControlName="horasJugadas" type="text" class="form-control mt-2" placeholder="Ingrese Horas jugadas">
+                    <span *ngIf="form.get('horasJugadas')?.hasError('required')">
+                        El campo Horas jugadas es <strong> requerido </strong>
+                    </span>
+                    <input formControlName="rangoActual" type="text" class="form-control mt-2" placeholder="Ingrese Rango actual">
+                    <span *ngIf="form.get('rangoActual')?.hasError('required')">
+                        El campo Rango actual es <strong> requerido </strong>
+                    </span>
                     <div class="row mt-2 text-center">
                         <div class="col-lg-6">
-                            <button type="button" class="btn btn-secondary">Aceptar</button>
+                            <button type="submit" class="btn btn-secondary">Aceptar</button>
                         </div>
                         <div class="col-lg-6">
                             <button routerLink="/" class="btn btn-warning">Volver</button>
-                        </div> <!-- Se cerró correctamente el div de la columna -->
-                    </div> <!-- Se cerró correctamente el div de la fila -->
+                        </div> 
+                    </div> 
                 </form>
             </div>
         </div>
