@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { UserService } from '../../services/user.service';
 import { User } from '../../interfaces/user';
 
@@ -11,7 +12,7 @@ export class ListUsersComponent implements OnInit {
   listUsers: User[] = [];
   loading: boolean = false;
 
-  constructor(private _userService: UserService) { }
+  constructor(private _userService: UserService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.getListUsers();
@@ -36,6 +37,7 @@ export class ListUsersComponent implements OnInit {
     this.loading = true;
     this._userService.deleteUser(id).subscribe(() => {
       this.getListUsers();
+      this.toastr.warning('El usuario ha sido eliminado con exito', 'Usuario eliminado');
     })
   }
 

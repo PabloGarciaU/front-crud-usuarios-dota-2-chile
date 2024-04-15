@@ -5,7 +5,7 @@
       <button type="button" class="btn btn-dark" routerLink="/add">Agregar Usuario</button>
     </div>
   
-    <table class="table table-hover">
+    <table *ngIf="listUsers.length > 0" class="table table-hover">
       <thead>
         <tr>
           <th scope="col">Nombre</th>
@@ -35,5 +35,6 @@
         </tr>
       </tbody>
     </table>
+    <h5 *ngIf="listUsers.length ==0 " >No hay Usuarios Registrados :( </h5>
   </div>
   
