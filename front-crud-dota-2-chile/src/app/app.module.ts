@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 
 
 // Moduls
-import {ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 //  Components
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -23,7 +24,8 @@ import { AddEditUserComponent } from './components/add-edit-user/add-edit-user.c
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     provideClientHydration()
