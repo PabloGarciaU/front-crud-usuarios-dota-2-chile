@@ -20,8 +20,16 @@ export class UserService {
     return this.http.get<any>(`${this.myAppUrl}${this.myApiUrl}`);
   }
 
+  getUserById(id: number): Observable<User> {
+    return this.http.get<User>(`${this.myAppUrl}${this.myApiUrl}${id}`);
+  }
+
   deleteUser(id: number): Observable<void> {
     return this.http.delete<void>(`${this.myAppUrl}${this.myApiUrl}${id}`);
+  }
+
+  saveUser(user: User): Observable<void> {
+    return this.http.post<void>(`${this.myAppUrl}${this.myApiUrl}`, user);
   }
 
 }
