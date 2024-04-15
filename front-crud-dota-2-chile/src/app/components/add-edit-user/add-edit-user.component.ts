@@ -34,9 +34,9 @@ export class AddEditUserComponent implements OnInit {
         nombre: this.form.value.nombre,
         apodo: this.form.value.apodo,
         rut: this.form.value.rut,
-        fechaNacimiento: this.form.value.fechaNacimiento,
-        horasJugadas: this.form.value.horasJugadas,
-        rangoActual: this.form.value.rangoActual
+        fechadenacimiento: this.form.value.fechaNacimiento,
+        horasjugadas: this.form.value.horasJugadas,
+        rangoactual: this.form.value.rangoActual
       };
 
       // Aquí puedes realizar la lógica para agregar el usuario, por ejemplo, enviarlo a un servicio

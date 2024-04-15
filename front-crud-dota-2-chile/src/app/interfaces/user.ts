@@ -3,7 +3,7 @@ export interface User{
     nombre: string;
     apodo: string;
     rut: string;
-    fechaNacimiento: Date;
-    horasJugadas: number;
-    rangoActual: string;
+    fechadenacimiento: Date;
+    horasjugadas: string;
+    rangoactual: string;
 }

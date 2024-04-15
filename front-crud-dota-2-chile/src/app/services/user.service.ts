@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'; // Se corrigió la importación de HttpClient
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../interfaces/user';
 import { environment } from '../enviroments/environment';
@@ -12,11 +12,12 @@ export class UserService {
   private myApiUrl: string;
 
   constructor(private http: HttpClient) { 
-    this.myAppUrl = environment.apiUrl;
+    this.myAppUrl = environment.endpoint;
     this.myApiUrl = 'api/usuarios/';
   }
 
-  getUsers(): Observable<User[]> { // Corregido el tipo de retorno
-    return this.http.get<User[]>(this.myAppUrl + this.myApiUrl); // Corregido el tipo de respuesta esperada
+  getListUsers(): Observable<any> {
+    return this.http.get<any>(`${this.myAppUrl}${this.myApiUrl}`);
   }
+
 }
