@@ -13,13 +13,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ListUsersComponent } from './components/list-users/list-users.component';
 import { AddEditUserComponent } from './components/add-edit-user/add-edit-user.component';
+import { ProgressBarComponent } from './shared/progress-bar/progress-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     ListUsersComponent,
-    AddEditUserComponent
+    AddEditUserComponent,
+    ProgressBarComponent
   ],
   imports: [
     BrowserModule,

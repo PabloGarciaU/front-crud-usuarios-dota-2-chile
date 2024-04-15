@@ -8,7 +8,8 @@ import { User } from '../../interfaces/user';
   styleUrls: ['./list-users.component.css']
 })
 export class ListUsersComponent implements OnInit {
-  listUsers: User[] = []
+  listUsers: User[] = [];
+  loading: boolean = false;
 
   constructor(private _userService: UserService) { }
 
@@ -17,9 +18,25 @@ export class ListUsersComponent implements OnInit {
   }
 
   getListUsers() {
-    this._userService.getListUsers().subscribe((data) => {
-      console.log(data);
-      this.listUsers = data.listUsers; 
-    });
+    this.loading = true;
+
+    this._userService.getListUsers().subscribe(
+      (data) => {
+        this.listUsers = data.listUsers;
+        this.loading = false;
+      },
+      (error) => {
+        console.error('Error fetching users:', error);
+        this.loading = false;
+      }
+    );
   }
+
+  deleteUser(id: number) {
+    this.loading = true;
+    this._userService.deleteUser(id).subscribe(() => {
+      this.getListUsers();
+    })
+  }
+
 }
